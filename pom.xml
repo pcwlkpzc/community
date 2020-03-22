@@ -58,16 +58,25 @@
 			<version>2.1.5.RELEASE</version>
 		</dependency>
 
+		<!--主要使用字符串的工具类，StringUtils.isBlank()-->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
             <version>3.9</version>
 		</dependency>
 
+		<!--验证码的一个包-->
 		<dependency>
 			<groupId>com.github.penggle</groupId>
 			<artifactId>kaptcha</artifactId>
 			<version>2.3.2</version>
+		</dependency>
+
+		<!--json数据处理更快的一个框架-->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.58</version>
 		</dependency>
 
 	</dependencies>

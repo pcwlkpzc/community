@@ -48,6 +48,10 @@ public class UserService implements CommunityConstant {
         return userMapper.selectById(id);
     }
 
+    public User findUserByName(String username){
+        return userMapper.selectByName(username);
+    }
+
     /**
      * 注册账户,并发送激活邮件
      * @param user

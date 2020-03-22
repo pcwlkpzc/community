@@ -31,6 +31,7 @@
         where email = #{email}
     </select>
 
+    <!--在数据库插入user之后，mybatis会从数据库中索取一个id，然后赋给user的id-->
     <insert id="insertUser" parameterType="User" keyProperty="id">
         insert into user (<include refid="insertFields"></include>)
         values(#{username},#{password},#{salt},#{email},#{type},#{status},#{activationCode},#{headerUrl},#{createTime})
