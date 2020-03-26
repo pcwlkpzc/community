@@ -5,8 +5,12 @@ import org.apache.ibatis.annotations.*;
 
 /**
  * 用户的登录和退出，持久层管理
+ *
+ * 第一次使用redis重构后，不再推荐使用此mapper，
+ * 所以增加 @Deprecated 注解
  */
 @Mapper
+@Deprecated
 public interface LoginTicketMapper {
 
     /**

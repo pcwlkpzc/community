@@ -19,8 +19,9 @@ public class Page {
     }
 
     public void setCurrent(int current) {
-        if (current >= 1) this.current = current;
-
+        if (current >= 1) {
+            this.current = current;
+        }
     }
 
     public int getLimit() {
@@ -61,7 +62,7 @@ public class Page {
      */
     public int getTotal(){
         if(rows % limit == 0){
-            return rows % limit;
+            return rows / limit;
         }else{
             return rows/limit + 1;
         }
@@ -84,7 +85,8 @@ public class Page {
      */
     public int getTo(){
         int to = current + 2;
-        return to > this.getTotal() ? this.getTotal() : to;
+        int total = this.getTotal();
+        return to > total ? total : to;
     }
 
 }
