@@ -32,4 +32,11 @@ public interface CommentMapper {
      * @return
      */
     int insertComment(Comment comment);
+
+    /**
+     * 根据评论的id来查询评论
+     * @param id
+     * @return
+     */
+    Comment selectCommentById(int id);
 }

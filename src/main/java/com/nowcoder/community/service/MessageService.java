@@ -42,12 +42,27 @@ public class MessageService {
     public int addMessage(Message message){
         message.setContent(HtmlUtils.htmlEscape(message.getContent()));//过滤标签
         message.setContent(sensitiveFilter.filter(message.getContent()));//过滤敏感词
-
         return messageMapper.insertMessage(message);
     }
 
     public int readMessage(List<Integer> ids){
         return messageMapper.updateStatus(ids,1);//将消息状态设为1
+    }
+
+    public Message findLatestNotice(int userId,String topic){
+        return messageMapper.selectLatestNotice(userId, topic);
+    }
+
+    public int findNoticeCount(int userId,String topic){
+        return messageMapper.selectNoticeCount(userId, topic);
+    }
+
+    public  int findNoticeUnreadCount(int userId,String topic){
+        return messageMapper.selectNoticeUnreadCount(userId, topic);
+    }
+
+    public List<Message> findNotices(int userId, String topic, int offset, int limit){
+        return messageMapper.selectNotices(userId, topic, offset, limit);
     }
 
 }
