@@ -200,6 +200,8 @@ public class MessageController implements CommunityConstant {
             messageVO.put("count",count);
             int unread = messageService.findNoticeUnreadCount(user.getId(), TOPIC_COMMENT);
             messageVO.put("unread",unread);
+        }else{
+            messageVO.put("message",message);
         }
         model.addAttribute("commentNotice",messageVO);
 
@@ -222,6 +224,8 @@ public class MessageController implements CommunityConstant {
             messageVO.put("count",count);
             int unread = messageService.findNoticeUnreadCount(user.getId(), TOPIC_LIKE);
             messageVO.put("unread",unread);
+        }else{
+            messageVO.put("message",message);
         }
         model.addAttribute("likeNotice",messageVO);
 
@@ -245,6 +249,8 @@ public class MessageController implements CommunityConstant {
             //未读消息数
             int unread = messageService.findNoticeUnreadCount(user.getId(), TOPIC_FOLLOW);
             messageVO.put("unread",unread);
+        }else{
+            messageVO.put("message",message);
         }
         model.addAttribute("followNotice",messageVO);
 

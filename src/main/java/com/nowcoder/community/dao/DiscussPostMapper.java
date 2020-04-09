@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * 评论DiscussPost类的持久层操作接口
+ * 帖子DiscussPost类的持久层操作接口
  */
 @Mapper
 public interface DiscussPostMapper {
@@ -54,4 +54,20 @@ public interface DiscussPostMapper {
      * @return
      */
     int updateCommentCount(int id,int commentCount);
+
+    /**
+     * 修改帖子的类型（比如置顶，或者普通帖子）
+     * @param id
+     * @param type
+     * @return
+     */
+    int updateType(int id, int type);
+
+    /**
+     * 修改帖子的状态（加精，或者删除）
+     * @param id
+     * @param status
+     * @return
+     */
+    int updateStatus(int id, int status);
 }
