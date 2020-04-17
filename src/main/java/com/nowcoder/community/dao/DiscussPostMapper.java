@@ -20,9 +20,10 @@ public interface DiscussPostMapper {
      * @param userId 用户id
      * @param offset 起始id
      * @param limit 当前页中包含几条数据
+     * @param orderMode 排序的模式，当为0时，按照默认的时间排序，为1时，按照分数排序
      * @return
      */
-    List<DiscussPost> selectDiscussPosts(int userId, int offset, int limit);
+    List<DiscussPost> selectDiscussPosts(int userId, int offset, int limit, int orderMode);
 
     /**
      * 查询所有的评论的条数
@@ -70,4 +71,12 @@ public interface DiscussPostMapper {
      * @return
      */
     int updateStatus(int id, int status);
+
+    /**
+     * 更改帖子的分数
+     * @param id
+     * @param score
+     * @return
+     */
+    int updateScore(int id, double score);
 }

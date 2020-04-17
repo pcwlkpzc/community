@@ -50,6 +50,11 @@ public class RedisKeyUtil {
     private static final String PREFIX_DAU = "dau";
 
     /**
+     * 帖子的id
+     */
+    private static final String PREFIX_POST="post";
+
+    /**
      * 某个实体类的赞
      * 存放的键值对：like:entity:entityType:entityId ---- > set(userId)
      * 表示某个给某个实体类点赞的用户的集合
@@ -164,5 +169,13 @@ public class RedisKeyUtil {
      */
     public static String getDAUKey(String startDate, String endDate){
         return PREFIX_DAU + SPLIT + startDate + SPLIT + endDate;
+    }
+
+    /**
+     * 传入一个查询帖子分数的key
+     * @return
+     */
+    public static String getPostScoreKey(){
+        return PREFIX_POST + SPLIT + "score";
     }
 }
