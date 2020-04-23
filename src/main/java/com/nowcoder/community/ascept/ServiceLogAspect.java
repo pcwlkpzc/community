@@ -18,8 +18,8 @@ import java.util.Date;
  * 利用切面编程，
  * 对所有的service在运行前进行记录业务日志
  */
-@Component
-@Aspect
+//@Component
+//@Aspect
 public class ServiceLogAspect {
 
     private static final Logger logger = LoggerFactory.getLogger(ServiceLogAspect.class);
